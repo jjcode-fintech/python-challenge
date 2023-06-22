@@ -1,23 +1,51 @@
-# -*- coding: UTF-8 -*-
-"""PyRamen Homework Starter."""
-
-# @TODO: Import libraries
+# Import libraries
 import csv
 from pathlib import Path
 
 # @TODO: Set file paths for menu_data.csv and sales_data.csv
-menu_filepath = Path('')
-sales_filepath = Path('')
+menu_filepath = Path('./Resources/menu_data.csv')
+sales_filepath = Path('./Resources/sales_data.csv')
 
 # @TODO: Initialize list objects to hold our menu and sales data
 menu = []
 sales = []
 
+
+
 # @TODO: Read in the menu data into the menu list
+with open(menu_filepath, 'r') as csvfile:
+    # Initialize line_num variable
+    row_count_menu = 0
 
+    # Print the datatype of the file object
+    # print(type(csvfile))
 
+    # Pass in the csv file to the csv.reader() function
+    # (with ',' as the delmiter/separator) and return the csvreader object
+    csvreader = csv.reader(csvfile, delimiter=',')
+    # Print the datatype of the csvreader
+    # print(type(csvreader))
 
+    # Go to the next row from the start of the file
+    # (which is often the first row/header) and iterate line_num by 1
+    header = next(csvreader)
+    row_count_menu += 1
+    
+    # Print the header
+    # print(f"{header} <---- HEADER")
 
+    # Read each row of data after the header
+    for row in csvreader:
+        # Create an object to hold each row of data
+        menu_obj = {
+            "item": row[0],
+            "category": row[1],
+            "description": row[2],
+            "price": float(row[3]),
+            "cost": int(row[4])
+        }
+        # Append the menu object value to the list of menu array 
+        menu.append(menu_obj)
 
 
 
@@ -25,23 +53,16 @@ sales = []
 
 
 # @TODO: Read in the sales data into the sales list
+with open(sales_filepath, 'r') as csvfile:
+    # Pass in the csv file to the csv.reader() function and (with ',' as the delmiter/separator) and return the csvreader object
+    csvreader = csv.reader(csvfile, delimiter=',')
 
-
-
-
-
-
-
-
-
-
-# @TODO: Initialize dict object to hold our key-value pairs of items and metrics
-report = {}
-
-# Initialize a row counter variable
-row_count = 0
-
-# @TODO: Loop over every row in the sales list object
+    # @TODO: Initialize dict object to hold our key-value pairs of items and metrics
+    report = {}
+    # Initialize a row counter variable
+    row_count = 0
+    
+    # @TODO: Loop over every row in the sales list object
 
 
 
