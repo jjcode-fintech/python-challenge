@@ -2,10 +2,10 @@
 import csv
 from pathlib import Path
 
-#Set file paths for menu_data.csv and sales_data.csv
+#Set file paths for budget_data.csv
 budget_filepath = Path('./Resources/budget_data.csv')
 
-# define variables
+# define inital variables
 total_months = []
 total_amount = []
 monthly_change_profit = []
@@ -14,12 +14,12 @@ monthly_change = 0
 monthly_change_total = 0
 initial_profit_counter = 0
 
-# open files to use
+# Open the file in "read" mode ('r') and store the contents in the variable "csvfile"
 with open(budget_filepath, 'r') as csvfile:
     reader = csv.reader(csvfile)
     header = next(reader)
 
-# for loop
+# loop thru the csv file and make calculation needed and store it in various variables 
     for row in reader:
         total_months.append(row[0])
         sum_months = len(total_months)
