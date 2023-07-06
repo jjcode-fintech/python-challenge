@@ -5,10 +5,9 @@ This is an finacial analysis using Python to evaluate monthly budget for a ficti
 
 Financial Analysis
 ------------------
-Total Months: 86
-Total Amount: $38382578.0
-Average Monthly Change: $38382578.0
-Greatest Increase in Profits: Feb-2012 $1170593.0
-Greatest Decrease in Profits: Sep-2013 $-1196225.0
-
+- Total Months: 86
+- Total: $38382578
+- Average Monthly Change: $-2315.12
+- Greatest Increase in Profits: Feb-12 ($1926159)
+- Greatest Decrease in Profits: Sep-13 ($-2196167)
 
